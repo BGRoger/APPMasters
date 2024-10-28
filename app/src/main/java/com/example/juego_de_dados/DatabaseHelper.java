@@ -36,19 +36,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Inserta una puntuación de manera asíncrona usando Completable
     public Completable insertarPuntuacion(String nombre, int puntuacion) {
         return Completable.fromAction(() -> {
-            SQLiteDatabase db = this.getWritableDatabase();
-            ContentValues contentValues = new ContentValues();
-            contentValues.put(COL_2, nombre); // Columna NAME
-            contentValues.put(COL_3, puntuacion); // Columna SCORE
-            db.insert(TABLE_NAME, null, contentValues);
+            SQLiteDatabase db = null;
+            try {
+                db = this.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+                contentValues.put(COL_2, nombre);
+                contentValues.put(COL_3, puntuacion);
+                db.insert(TABLE_NAME, null, contentValues);
+            } finally {
+                if (db != null && db.isOpen()) {
+                    db.close(); // Cierra la base de datos después de la inserción
+                }
+            }
         });
     }
 
     // Obtiene las puntuaciones de manera asíncrona usando Single
     public Single<Cursor> obtenerPuntuaciones() {
         return Single.fromCallable(() -> {
-            SQLiteDatabase db = this.getReadableDatabase();
-            return db.rawQuery("SELECT * FROM " + TABLE_NAME + " ORDER BY SCORE DESC", null);
+            SQLiteDatabase db = null;
+            Cursor cursor = null;
+            try {
+                db = this.getReadableDatabase();
+                cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " ORDER BY SCORE DESC", null);
+                return cursor;
+            } catch (Exception e) {
+                if (cursor != null) {
+                    cursor.close();
+                }
+                throw e; // Re-lanza el error para manejarlo en la actividad
+            } finally {
+                if (db != null && db.isOpen()) {
+                    db.close();
+                }
+            }
         });
     }
 }
