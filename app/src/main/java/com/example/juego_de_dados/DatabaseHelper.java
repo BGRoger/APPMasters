@@ -52,24 +52,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // Obtiene las puntuaciones de manera asíncrona usando Single
+
     public Single<Cursor> obtenerPuntuaciones() {
         return Single.fromCallable(() -> {
-            SQLiteDatabase db = null;
-            Cursor cursor = null;
-            try {
-                db = this.getReadableDatabase();
-                cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " ORDER BY SCORE DESC", null);
-                return cursor;
-            } catch (Exception e) {
-                if (cursor != null) {
-                    cursor.close();
-                }
-                throw e; // Re-lanza el error para manejarlo en la actividad
-            } finally {
-                if (db != null && db.isOpen()) {
-                    db.close();
-                }
-            }
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " ORDER BY SCORE DESC", null);
+            return cursor;
         });
+
     }
 }

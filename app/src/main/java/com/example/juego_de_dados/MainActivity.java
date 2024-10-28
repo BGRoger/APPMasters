@@ -113,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
     private void mostrarRanking() {
         Log.d("MainActivity", "Iniciando RankingActivity.");
         Intent intent = new Intent(MainActivity.this, RankingActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK); // Limpia la pila
         startActivity(intent);
+        finish(); // Cerrar MainActivity
     }
 }
