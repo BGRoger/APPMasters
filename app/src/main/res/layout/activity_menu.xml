@@ -1,54 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7DD798">
-
-    <Button
-        android:id="@+id/btnRanking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ranking"
-        android:textSize="16sp"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="354dp" />
-
-    <Button
-        android:id="@+id/btnSalir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Salir"
-        android:textSize="16sp"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="479dp" />
-
-    <Button
-        android:id="@+id/btnJugar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="160dp"
-        android:text="Jugar"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="227dp" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="71dp"
-        android:layout_height="70dp"
-        app:srcCompat="@drawable/dado5"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="619dp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="71dp"
-        android:layout_height="70dp"
-        app:srcCompat="@drawable/dado2"
-        tools:layout_editor_absoluteX="206dp"
-        tools:layout_editor_absoluteY="619dp" />
+    android:background="#7DD798"
+    android:orientation="vertical"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/textView2"
@@ -58,7 +14,51 @@
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="119dp" />
+        android:layout_marginTop="50dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btnJugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jugar"
+        android:textSize="16sp"
+        android:layout_marginTop="50dp" />
+
+    <Button
+        android:id="@+id/btnRanking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ranking"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="71dp"
+            android:layout_height="70dp"
+            android:src="@drawable/dado5" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="71dp"
+            android:layout_height="70dp"
+            android:src="@drawable/dado2"
+            android:layout_marginStart="20dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
