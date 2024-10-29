@@ -3,8 +3,7 @@
     android:id="@+id/tapete"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7DD798"
-    android:backgroundTint="#7DD798"
+    android:background="@drawable/fondo1"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp">
