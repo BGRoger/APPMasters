@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo1"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="El juego de los Dados"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp" />
+
+    <Button
+        android:id="@+id/btnJugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jugar"
+        android:textSize="16sp"
+        android:layout_marginTop="50dp" />
+
+    <Button
+        android:id="@+id/btnRanking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ranking"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp" />
+
+    <!-- ToggleButton para activar o desactivar la música -->
+    <ToggleButton
+        android:id="@+id/toggleMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textOn="Música ON"
+        android:textOff="Música OFF" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="71dp"
+            android:layout_height="70dp"
+            android:src="@drawable/dado5" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="71dp"
+            android:layout_height="70dp"
+            android:src="@drawable/dado2"
+            android:layout_marginStart="20dp" />
+    </LinearLayout>
+
+</LinearLayout>
+
